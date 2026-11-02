@@ -1,0 +1,310 @@
+:root {
+  --page-bg: #060606;
+  --poster-bg: #0b0b0b;
+  --red: #ef1821;
+  --white: #f2f2f2;
+  --black: #060606;
+}
+
+* {
+  box-sizing: border-box;
+  cursor: url("royal-crown-outline-for-a-prince.svg") 20 20, auto;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--page-bg);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.page-shell {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.poster {
+  width: min(92vw, 1080px);
+  background: var(--poster-bg);
+  border: 10px solid #000;
+  box-shadow: 0 20px 34px rgba(0, 0, 0, 0.22);
+  padding: 0;
+  overflow: hidden;
+}
+
+.headline-group {
+  background: var(--red);
+  /*border: 6px solid #000;*/
+  border-bottom: none;
+  margin: 0;
+  padding: 8px 14px 0;
+}
+
+.headline {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Arial Black", Impact, sans-serif;
+  font-weight: 900;
+  line-height: 0.75;
+  letter-spacing: -0.095em;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.row {
+  display: block;
+  font-size: clamp(4.5rem, 9.7vw, 15rem);
+}
+
+.row-1 {
+  margin-top: 6px;
+}
+
+.row-2 {
+  margin-top: -0.12em;
+  font-size: clamp(4.2rem, 9.3vw, 14rem);
+}
+
+.title-band {
+  display: flex;
+  flex-direction: column;
+  background: var(--red);
+  /* border: 6px solid #000; */
+  border-top: none;
+  border-bottom: none;
+  padding: 6px 20px 0;
+  margin: 0;
+}
+
+.title-row {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.1em;
+  white-space: nowrap;
+  margin-bottom: 1px;
+}
+
+.word {
+  display: inline-block;
+  font-family: "Arial Black", Impact, sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  line-height: 0.8;
+  font-size: clamp(1.5rem, 2.8vw, 4.1rem);
+  text-transform: uppercase;
+  margin-right: 0.04em;
+}
+
+/* .word:nth-child(odd) {
+  color: var(--white);
+  text-shadow: 2px 2px 0 #000;
+} */
+
+.title-band .blue,
+.title-band .muka,
+.title-band .onyx,
+.title-band .biel,
+.title-band .prince,
+.title-band .dan,
+.title-band .princess,
+.title-band .lupita {
+  color: var(--white);
+  text-shadow: 2px 2px 0 #000;
+}
+
+.title-band .mother,
+.title-band .father,
+.title-band .godmother,
+.title-band .new,
+.title-band .godfather,
+.title-band .legendary,
+.title-band .statement {
+  color: #0b0b0b;
+}
+
+.family-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(130px, 1fr));
+  background: var(--red);
+  /*border: 6px solid #000;*/
+  border-top: none;
+}
+
+.cell {
+  position: relative;
+  min-height: 92px;
+  border: 2px solid #000;
+  display: grid;
+  place-items: center;
+  font-family: "Arial Black", Impact, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  color: #000;
+  background: var(--red);
+  padding: 8px 4px 12px;
+  transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
+}
+
+.cell.active {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+.cell.active span,
+.cell.active small {
+  color: #000 !important;
+}
+
+.cell span {
+  display: block;
+  font-size: clamp(1.3rem, 2.1vw, 3.2rem);
+  line-height: 0.9;
+  transform: translateY(3px);
+}
+
+.cell small {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  transform: translateX(-50%);
+  font-size: clamp(0.68rem, 1vw, 1.3rem);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: #000;
+  opacity: 0.95;
+}
+
+.cell.black {
+  background: #000;
+  color: var(--white);
+}
+
+.cell.black small,
+.cell.black span {
+  color: var(--white);
+}
+
+.cell.red {
+  background: var(--red);
+  color: #000;
+}
+
+.cell.red small,
+.cell.red span {
+  color: #000;
+}
+
+.cell.active {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+.cell.active span,
+.cell.active small {
+  color: #000 !important;
+}
+
+.footer-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25em;
+  background: var(--red);
+  /*border: 6px solid #000;*/
+  border-top: none;
+  padding: 12px 10px 16px;
+  min-height: 120px;
+  font-family: "Arial Black", Impact, sans-serif;
+  text-transform: uppercase;
+}
+
+.footer-line .label,
+.footer-line .year {
+  font-size: clamp(1.8rem, 3vw, 4rem);
+  color: #000;
+  line-height: 0.92;
+}
+
+.footer-line .highlight {
+  font-size: clamp(1.8rem, 3vw, 4rem);
+  color: var(--white);
+  text-shadow: 2px 2px 0 #000;
+  line-height: 0.82;
+}
+
+.footer-line .year {
+  font-size: clamp(2.1rem, 3.5vw, 4.8rem);
+}
+
+@media (max-width: 900px) {
+  .poster {
+    width: min(96vw, 900px);
+  }
+
+  .row {
+    font-size: clamp(2.8rem, 8vw, 8.5rem);
+  }
+
+  .row-2 {
+    font-size: clamp(2.7rem, 7.8vw, 8rem);
+  }
+
+  .word {
+    font-size: clamp(1.1rem, 2.5vw, 2.8rem);
+  }
+
+  .family-grid {
+    grid-template-columns: repeat(3, minmax(120px, 1fr));
+  }
+
+  .footer-line {
+    flex-wrap: wrap;
+    text-align: center;
+    min-height: 90px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    padding: 10px;
+  }
+
+  .poster {
+    width: 100%;
+    /*border-width: 8px;*/
+  }
+
+  .row {
+    font-size: clamp(2.2rem, 9vw, 5.6rem);
+  }
+
+  .row-2 {
+    font-size: clamp(2.1rem, 8.8vw, 5.3rem);
+  }
+
+  .word {
+    font-size: clamp(0.82rem, 3vw, 1.8rem);
+  }
+
+  .family-grid {
+    grid-template-columns: repeat(2, minmax(110px, 1fr));
+  }
+
+  .cell {
+    min-height: 76px;
+  }
+}

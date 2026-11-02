@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>House of Imperio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="poster" aria-label="House of Imperio poster">
+        <div class="headline-group">
+          <h1 class="headline headline-large">
+            <span class="row row-1">HOUSE OF</span>
+            <span class="row row-2">IMPERIO</span>
+          </h1>
+        </div>
+
+        <div class="title-band" aria-label="statement mother blue legendary father muka">
+          <div class="title-row" style="background-color: white;">
+            <span class="word statement">STATEMENT</span>
+            <span class="word mother">MOTHER</span>
+            <span class="word blue" style="color: var(--red);">BLUE</span>
+          </div>
+          <div class="title-row" style="background-color: black;">
+            <span class="word legendary" style="color: white;">LEGENDARY</span>
+            <span class="word father" style="color: white;">FATHER</span>
+            <span class="word muka" style="color: var(--red);">MUKA</span>
+          </div>
+          <div class="title-row" style="background-color: var(--red);">
+            <span class="word legendary" style="color: black;">LEGENDARY</span>
+            <span class="word godmother" style="color: black;">GODMOTHER</span>
+            <span class="word onyx" style="color: white;">ONYX</span>
+          </div>
+          <div class="title-row" style="background-color: white; display:none">
+            <span class="word new" style="color: black;">NEW</span>
+            <span class="word godfather" style="color: black;">GODFATHER</span>
+            <span class="word biel" style="color: var(--red);">BIEL</span>
+          </div>
+          <div class="title-row" style="background-color: black;">
+            <span class="word prince" style="color: white;">PRINCE</span>
+            <span class="word dan" style="color: white;">DAN</span>
+            <span class="word princess" style="color: var(--red);">PRINCESS</span>
+            <span class="word lupita" style="color: var(--red);">LUPITA</span>
+          </div>
+        </div>
+
+        <div class="family-grid" aria-label="Family names and ranks">
+          <div class="cell black"><span>BIEEL</span><small>I</small></div>
+          <div class="cell red"><span>ALICIA</span><small>II</small></div>
+          <div class="cell black"><span>LOTUS</span><small>III</small></div>
+          <div class="cell red"><span>KAI</span><small>IV</small></div>
+          <div class="cell black"><span>TALAN</span><small>V</small></div>
+          <div class="cell red"><span>RAOLIN</span><small>VI</small></div>
+          <div class="cell black"><span>MABELLA</span><small>VII</small></div>
+          <div class="cell red"><span>VIPER</span><small>VIII</small></div>
+          <div class="cell black"><span>LALAH</span><small>IX</small></div>
+          <div class="cell red"><span>MAGGIE</span><small>X</small></div>
+          <div class="cell black"><span>NACLARA</span><small>XI</small></div>
+          <div class="cell red"><span>LUZ</span><small>XII</small></div>
+          <div class="cell black"><span>LUA</span><small>XIII</small></div>
+          <div class="cell red"><span>ZARI</span><small>XIV</small></div>
+          <div class="cell black"><span>RESSU</span><small>XV</small></div>
+          <div class="cell red"><span>LINDA</span><small>XVI</small></div>
+          <div class="cell black"><span>CASANOVA</span><small>XVII</small></div>
+          <div class="cell red"><span>KEYKEY</span><small>XVIII</small></div>
+          <div class="cell black"><span>BELADONNA</span><small>XIX</small></div>
+          <div class="cell red"><span>VENUS</span><small>XX</small></div>
+          <div class="cell black"><span>CAPRI</span><small>XXI</small></div>
+          <div class="cell red"><span>DRACARYS</span><small>XXII</small></div>
+          <div class="cell black" style="display: none;"><span>STELLA</span><small>XXIII</small></div>
+          <div class="cell red" style="display: none;"><span>SOSO</span><small>XXIV</small></div>
+          <div class="cell black" style="display: none;"><span>MANTIS</span><small>XXV</small></div> 
+        </div>
+
+        <div class="footer-line" aria-label="Brazil Sao Paulo Chapter 2026">
+          <span class="label">THE</span>
+          <span class="highlight">BRAZIL SAO PAULO</span>
+          <span class="label">CHAPTER</span>
+          <span class="year">2026</span>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const cells = Array.from(document.querySelectorAll('.family-grid .cell'));
+      let activeIndex = 0;
+
+      function cycleCell() {
+        cells.forEach((cell, index) => {
+          cell.classList.toggle('active', index === activeIndex);
+        });
+
+        setTimeout(() => {
+          cells[activeIndex].classList.remove('active');
+          activeIndex = (activeIndex + 1) % cells.length;
+          cycleCell();
+        }, 1500);
+      }
+
+      cycleCell();
+    </script>
+  </body>
+</html>
